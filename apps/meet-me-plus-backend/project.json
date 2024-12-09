@@ -1,0 +1,26 @@
+{
+  "name": "meet-me-plus-backend",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/meet-me-plus-backend/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "meet-me-plus-backend:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "meet-me-plus-backend:build:development"
+        },
+        "production": {
+          "buildTarget": "meet-me-plus-backend:build:production"
+        }
+      }
+    }
+  }
+}
